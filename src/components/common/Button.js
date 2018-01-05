@@ -37,6 +37,3 @@ const styles = {
 };
 
 export { Button };
-
-// export { Button: Button };
-// since the key and object names are indentical we can use just Button

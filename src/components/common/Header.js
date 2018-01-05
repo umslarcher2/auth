@@ -36,6 +36,3 @@ const styles = {
 
 // Make component available to other parts of the app
 export { Header };
-
-// export { Header: Header };
-// since the key and object names are indentical we can use just Header

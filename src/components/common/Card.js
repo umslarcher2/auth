@@ -1,13 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Card = (props) => {
-  return (
+const Card = (props) => (
     <View style={styles.containerStyle}>
       {props.children}
     </View>
   );
-};
 
 const styles = {
   containerStyle: {
@@ -30,6 +28,3 @@ const styles = {
 };
 
 export { Card };
-
-// export { Card: Card };
-// since the key and object names are indentical we can use just Card

@@ -14,18 +14,17 @@ class LoginForm extends Component {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(this.onLoginSuccess.bind(this))
       .catch(() => {
-          firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(this.onLoginSuccess.bind(this))
-            .catch(this.onLoginFail.bind(this));
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(this.onLoginSuccess.bind(this))
+          .catch(this.onLoginFail.bind(this));
       });
   }
 
-onLoginFail() {
-  this.setState({ error: 'Authentication Failed! ', loading: false });
-}
+  onLoginFail() {
+    this.setState({ error: 'Authentication Failed', loading: false });
+  }
 
-
-onLoginSuccess() {
+  onLoginSuccess() {
     this.setState({
       email: '',
       password: '',
@@ -36,7 +35,7 @@ onLoginSuccess() {
 
   renderButton() {
     if (this.state.loading) {
-      return <Spinner size='small' />;
+      return <Spinner size="small" />;
     }
 
     return (
@@ -52,7 +51,7 @@ onLoginSuccess() {
         <CardSection>
           <Input
             placeholder="user@gmail.com"
-            label="Email:"
+            label="Email"
             value={this.state.email}
             onChangeText={email => this.setState({ email })}
           />
@@ -60,11 +59,11 @@ onLoginSuccess() {
 
         <CardSection>
           <Input
-          secureTextEntry
-          placeholder="password"
-          label="Password:"
-          value={this.state.password}
-          onChangeText={password => this.setState({ password })}
+            secureTextEntry
+            placeholder="password"
+            label="Password"
+            value={this.state.password}
+            onChangeText={password => this.setState({ password })}
           />
         </CardSection>
 
@@ -87,4 +86,5 @@ const styles = {
     color: 'red'
   }
 };
+
 export default LoginForm;

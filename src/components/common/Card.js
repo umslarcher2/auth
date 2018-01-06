@@ -1,11 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Card = (props) => (
+const Card = (props) => {
+  return (
     <View style={styles.containerStyle}>
       {props.children}
     </View>
   );
+};
 
 const styles = {
   containerStyle: {
@@ -14,16 +16,13 @@ const styles = {
     borderColor: '#ddd',
     borderBottomWidth: 0,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
     shadowRadius: 2,
-    padding: 5,
-    elevation: 3,
+    elevation: 1,
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 10,
-
-
+    marginTop: 10
   }
 };
 

@@ -1,12 +1,14 @@
+
 import React from 'react';
 import { View } from 'react-native';
 
-const CardSection = (props) => (
+const CardSection = (props) => {
+  return (
     <View style={styles.containerStyle}>
       {props.children}
     </View>
   );
-
+};
 
 const styles = {
   containerStyle: {
@@ -17,11 +19,7 @@ const styles = {
     flexDirection: 'row',
     borderColor: '#ddd',
     position: 'relative'
-
   }
 };
 
 export { CardSection };
-
-// export { CardSection: CardSection };
-// since the key and object names are indentical we can use just CardSection
